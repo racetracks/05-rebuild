@@ -23,7 +23,18 @@ While the providers are managing the logistics of the migration itself, we have 
 
 ## 2. Immediate Concerns (Action Required)
 
-### 2.1 Firewall & DR Configuration — URGENT
+### 2.1 Network Migration Topology — URGENT
+
+We have very limited visibility into how the network migration will be executed. This is a critical gap. We do not currently know:
+
+- How and when the Fortigate gateway will be migrated from SA to Sydney
+- How Layer 2 VLANs will be handled during and after the migration
+- Whether VLANs will be stretched between the current and new datacentres during transition
+- What the intended end-state Layer 3 topology looks like
+
+**An urgent communication to ABB has been drafted — see Section 7.**
+
+### 2.2 Firewall & DR Configuration — URGENT
 
 We believe our current Fortigate firewall is deployed in a replica configuration rather than an active/passive failover pair. This configuration was understood to have been established to support a Disaster Recovery test scenario. However, the current state has **not been formally confirmed**.
 
@@ -35,17 +46,6 @@ We believe our current Fortigate firewall is deployed in a replica configuration
 | Clarify whether DR failover is currently functional or intentionally disabled | [Owner] | Critical |
 | Document compute sitting behind the DR firewall | [Owner] | High |
 | Determine whether this configuration needs to be remediated before migration | [Owner] | High |
-
-### 2.2 Network Migration Topology — URGENT
-
-We have very limited visibility into how the network migration will be executed. This is a critical gap. We do not currently know:
-
-- How and when the Fortigate gateway will be migrated from SA to Sydney
-- How Layer 2 VLANs will be handled during and after the migration
-- Whether VLANs will be stretched between the current and new datacentres during transition
-- What the intended end-state Layer 3 topology looks like
-
-**An urgent communication to ABB has been drafted — see Section 7.**
 
 ---
 
@@ -202,12 +202,12 @@ After migration, we will use console access to re-IP the servers to match the ne
 
 ---
 
-## 8. Questions Summary
+## 8. Open Questions Summary
 
 | # | Question | Directed To | Priority |
 |---|---|---|---|
-| 1 | What is the current Fortigate HA/DR configuration? | ABB | Critical |
-| 2 | How will VLANs be handled during the gateway migration? | ABB / 11:11 | Critical |
+| 1 | How will VLANs be handled during the gateway migration? | ABB / 11:11 | Critical |
+| 2 | What is the current Fortigate HA/DR configuration? | ABB | Critical |
 | 3 | When can we get VLAN provisioning in Sydney? | 11:11 | Critical |
 | 4 | When will management portal access be available? | 11:11 | High |
 | 5 | Is the DR platform Zerto Cloud Manager? | 11:11 | High |
@@ -218,4 +218,4 @@ After migration, we will use console access to re-IP the servers to match the ne
 
 ---
 
-
+*Document last updated: [Date] — This is a working draft and will be updated as information is received.*
