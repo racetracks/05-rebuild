@@ -1,10 +1,10 @@
 # Tasks
 
+- [Configure Zones](#configure-zones)
+- [Configure VLANs](#configure-vlans)
+- [Configure Default Zone Firewall Rules](#configure-default-zone-firewall-rules)
 
-## Steps
-
-### Zones
-
+## Configure Zones
 Create 2 new zones.
 
 **Log in to Ubiquiti:** Network → Policy Engine → Zones → Create New
@@ -13,3 +13,7 @@ Create 2 new zones.
 |------------|
 | z-dmz      |
 | z-internal |
+
+## Configure VLANs
+
+## Configure Default Zone Firewall Rules
